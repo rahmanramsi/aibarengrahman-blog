@@ -1,0 +1,25 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "aibarengrahman-blog",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "aibarengrahman-blog-db","database_id": "c6564457-0e9e-49d7-8b34-2542bd19e4c2",
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "aibarengrahman-blog-media","preview_bucket_name": "aibarengrahman-blog-media",
+		},
+	],
+	// Sandboxed plugins require Worker Loader, available on Workers paid plans. Uncomment to enable:
+	// "worker_loaders": [{ "binding": "LOADER" }],
+	// General maintenance cron trigger
+	"triggers": {
+		"crons": ["* * * * *"],
+	},
+}
